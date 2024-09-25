@@ -1,0 +1,38 @@
+                        PROPRIETARY LICENSE AGREEMENT
+
+Copyright (c) 2024, Denis Odesskiy. All rights reserved.
+
+1. **License Grant**:
+   - Denis Odesskiy (the "Licensor") grants you (the "Licensee") a non-exclusive, non-transferable, revocable license
+   to use, modify, and distribute this software only under the terms of this agreement. This license is granted solely
+   for non-commercial use unless explicitly agreed otherwise in writing.
+
+2. **Restrictions**:
+   - The Licensee may not distribute, sublicense, or otherwise make available the software to any third party without
+   the prior written consent of Denis Odesskiy.
+   - The Licensee may not use the software for any illegal purposes or in any manner that could harm Denis Odesskiy or
+   the software.
+   - The Licensee may not alter or remove any copyright or proprietary notices from the software.
+
+3. **Ownership**:
+   - All rights, title, and interest in and to the software, including all intellectual property rights, remain
+   with Denis Odesskiy.
+
+4. **Termination**:
+   - This license is effective until terminated. The Licensee's rights under this license will terminate automatically
+   if the Licensee fails to comply with any term of this license agreement.
+   - Upon termination, the Licensee must cease all use, modification, and distribution of the software.
+
+5. **Disclaimer**:
+   - The software is provided "as-is" without any warranties of any kind. Denis Odesskiy makes no warranties,
+   express or implied, regarding the software, including but not limited to implied warranties of merchantability
+   and fitness for a particular purpose.
+   - In no event shall Denis Odesskiy be liable for any damages arising from the use or inability to use the software.
+
+6. **Governing Law**:
+   - This license shall be governed by and construed in accordance with the laws of [Your Country/State].
+
+7. **Contact Information**:
+   - For questions about this license or to request further information,
+   please contact Denis Odesskiy at [https://github.com/MyFreeIT/java/passwordgenerator/issues].
+
