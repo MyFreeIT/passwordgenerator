@@ -5,6 +5,10 @@
 This is a simple yet customizable password generation tool developed using Java Swing. It allows users to generate
 secure passwords with specific criteria, such as length, the inclusion of special characters, digits, and more.
 
+## Screenshot
+
+![App Screenshot](./docs/screenshot.png)
+
 ## Features
 
 - **Password Length**: Choose the desired length of the password.
