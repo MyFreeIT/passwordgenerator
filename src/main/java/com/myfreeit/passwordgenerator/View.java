@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -51,6 +52,16 @@ public class View extends JFrame {
      * The default locale is English, but the user can switch between other languages.
      */
     public View() {
+        setIconImages(Arrays.asList(
+                new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/sizes/16x16/app_icon.png"))).getImage(),
+                new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/sizes/24x24/app_icon.png"))).getImage(),
+                new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/sizes/32x32/app_icon.png"))).getImage(),
+                new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/sizes/64x64/app_icon.png"))).getImage(),
+                new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/sizes/128x128/app_icon.png"))).getImage(),
+                new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/sizes/256x256/app_icon.png"))).getImage(),
+                new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/sizes/512x512/app_icon.png"))).getImage()
+        ));
+
         bundle = ResourceBundle.getBundle("i18n/messages", Locale.ENGLISH);
 
         setTitle(bundle.getString("app.title"));
