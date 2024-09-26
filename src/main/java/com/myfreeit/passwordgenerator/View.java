@@ -16,6 +16,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.text.MessageFormat;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
@@ -58,7 +59,7 @@ public class View extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Initialize spinner and slider with synchronized values
+        // Initialize spinner and slider with synchronized values.
         lengthSpinner = new JSpinner(new SpinnerNumberModel(MIN_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH, 1)); // Spinner for password length
         lengthSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH); // Slider for password length
         lengthSlider.setMajorTickSpacing(8);
@@ -78,7 +79,7 @@ public class View extends JFrame {
         resultArea.setWrapStyleWord(true);
         messageLabel = new JLabel();
 
-        // Sync slider and spinner values
+        // Sync slider and spinner values.
         lengthSlider.addChangeListener(e -> lengthSpinner.setValue(lengthSlider.getValue()));
         lengthSpinner.addChangeListener(e -> lengthSlider.setValue((int) lengthSpinner.getValue()));
 
@@ -86,45 +87,54 @@ public class View extends JFrame {
         panel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
-        // Add the language selection combo box
+        // Add language selection icon.
+        ImageIcon choiceLanguageIcon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/globe.png")));
+        JLabel choiceLanguageLabel = new JLabel(choiceLanguageIcon);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        panel.add(choiceLanguageLabel, gbc);
+
+        // Add the language selection combo box.
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.fill = GridBagConstraints.NONE;
         gbc.anchor = GridBagConstraints.EAST;
         gbc.weightx = 0;
         gbc.insets = new Insets(5, 10, 5, 10);
-        box.setPreferredSize(new Dimension(50, box.getPreferredSize().height)); // Устанавливаем ширину бокса
+        box.setPreferredSize(new Dimension(50, box.getPreferredSize().height));
         panel.add(box, gbc);
 
-        // Add password length label and spinner
+        // Add password length label and spinner.
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
         gbc.weightx = 0.5;
         gbc.anchor = GridBagConstraints.WEST;
+        passwordLengthLabel.setPreferredSize(new Dimension(220, passwordLengthLabel.getPreferredSize().height));
         panel.add(passwordLengthLabel, gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.EAST;
-        lengthSpinner.setPreferredSize(box.getPreferredSize()); // Устанавливаем ту же ширину, что и у бокса
+        lengthSpinner.setPreferredSize(box.getPreferredSize());
         panel.add(lengthSpinner, gbc);
 
-        // Add slider
+        // Add slider.
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel.add(lengthSlider, gbc);
 
-        // Add special characters checkbox
+        // Add special characters checkbox.
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel.add(specialCharsCheckbox, gbc);
 
-        // Add generate button
+        // Add generate button.
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.gridwidth = 2;
@@ -132,12 +142,12 @@ public class View extends JFrame {
         gbc.anchor = GridBagConstraints.CENTER;
         panel.add(generateButton, gbc);
 
-        // Add result area (scrollable)
+        // Add result area (scrollable).
         add(panel, BorderLayout.NORTH);
         add(new JScrollPane(resultArea), BorderLayout.CENTER);
         add(messageLabel, BorderLayout.SOUTH);
 
-        box.setSelectedIndex(0); // Default language is English
+        box.setSelectedIndex(0); // Default language is English.
     }
 
     /**
@@ -239,7 +249,6 @@ public class View extends JFrame {
             setTitle(bundle.getString("app.title"));
             specialCharsCheckbox.setText(bundle.getString("label.specialChars"));
 
-            // Форматируем строку с длиной пароля
             lengthLabelText = bundle.getString("label.length");
             lengthLabelText = MessageFormat.format(lengthLabelText, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH);
             passwordLengthLabel.setText(lengthLabelText);
