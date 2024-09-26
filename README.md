@@ -15,7 +15,7 @@ secure passwords with specific criteria, such as length, the inclusion of specia
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/MyFreeIT/java/passwordgenerator.git
+   git clone https://github.com/MyFreeIT/passwordgenerator.git
 
 2. **Navigate to the project directory**:
    ```bash
